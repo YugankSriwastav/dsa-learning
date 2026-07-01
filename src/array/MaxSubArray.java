@@ -1,4 +1,4 @@
 package array;
 
-public class MaxSubarray {
+public class MaxSubArray {
 }
