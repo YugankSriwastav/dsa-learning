@@ -1,4 +1,4 @@
-package sorting;
+package sorting.merge;
 
 public class MergeSort {
 
