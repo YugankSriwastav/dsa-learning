@@ -15,7 +15,7 @@ public class MergeSort {
     }
 
     public void merging(int[] arr, int low, int mid, int high){
-        int newArray [] = new int[high - low + 1];
+        int[] newArray = new int[high - low + 1];
           int left = low;
           int right = mid + 1;
           int index = 0;
