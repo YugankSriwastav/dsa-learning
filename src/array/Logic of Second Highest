@@ -1,0 +1,15 @@
+
+// Logic of Second Highest Element
+
+// Step 1: Find the highest value in the array.
+
+Create a variable `max` and assign it the value of the first element of the array.
+Traverse the array using a loop.
+If `arr[i]` is greater than `max`, update `max` with `arr[i]`.
+
+// Step 2: Find the value that is smaller than `max` but greater than all other values.
+
+Assume the first element is the second highest value.
+Traverse the array from the first index to the last index.
+If `arr[i]` is smaller than `max`, compare it with `secondHighest`.
+If `arr[i]` is greater than `secondHighest`, update `secondHighest` with `arr[i]`.
