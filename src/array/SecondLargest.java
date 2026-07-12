@@ -20,7 +20,7 @@ public class SecondLargest {
         }
 
         // now we have max value
-        int secondHighest = arr[0];
+        int secondHighest = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
             if(arr[i] < max){
                 if(arr[i] > secondHighest){
@@ -31,10 +31,28 @@ public class SecondLargest {
 
        return secondHighest;
     }
+        // Striver Logic
+    public int secondHighest(int [] arr){
+        int largest = arr[0];
+        int secondLargest = Integer.MIN_VALUE;
+        for (int i = 1; i < arr.length; i++) {
+            if(arr[i] > largest){
+                secondLargest = largest;
+                largest = arr[i];
+
+            } else if (arr[i] > secondLargest) {
+                secondLargest = arr[i];
+            }
+
+        }
+        return secondLargest;
+    }
+
 
     public static void main(String[] args) {
-        int [] arr = {6,2,9,5,7,3,1};
+        int [] arr = {-10,-20,-30};
         SecondLargest secondLargest = new SecondLargest();
-        System.out.println("second Largest" + secondLargest.secondLargest(arr));
+        System.out.println("second Largest " + secondLargest.secondLargest(arr));
+        System.out.println("second highest by 2nd method : " + secondLargest.secondHighest(arr));
     }
 }
