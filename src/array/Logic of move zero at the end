@@ -1,0 +1,53 @@
+# Logic to Move Zeroes to the End
+
+**Given Array**
+
+```text
+[1,2,0,4,5,0,6,7]
+```
+
+**Expected Array**
+
+```text
+[1,2,4,5,6,7,0,0]
+```
+
+## Brute Force
+
+Run a loop from index `0` to the end of the array.
+
+If a `0` is found, shift all the elements after that zero by one position to the left and place `0` at the last index.
+
+After placing the zero at the end, decrease the last index (`last--`) because that zero is already at its correct position.
+
+Repeat this process until the entire array is traversed.
+
+**Time Complexity:** `O(n²)`
+
+**Space Complexity:** `O(1)`
+
+---
+
+## Optimal Approach
+
+Traverse the array and find the first zero.
+
+```java
+int j = -1;
+```
+
+If a zero is found, store its index in `j` and break the loop.
+
+If `j == -1`, it means there is no zero in the array, so no changes are required.
+
+Now start another loop from `j + 1` to the end of the array.
+
+If the current element is not zero, swap it with `arr[j]` and increment `j`.
+
+If the current element is zero, do nothing and continue the loop.
+
+By the end of the traversal, all the non-zero elements will be in their correct order and all the zeroes will automatically be moved to the end.
+
+**Time Complexity:** `O(n + n) = O(2n) = O(n)`
+
+**Space Complexity:** `O(1)`
