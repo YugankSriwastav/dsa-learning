@@ -1,0 +1,86 @@
+Approach 1: Brute Force
+  Algorithm
+
+In this approach, I first create a separate union array to store the final result.
+
+I traverse the first sorted array and insert only those elements that are greater than their previous element. Since the array is sorted, this removes duplicate values while copying the elements.
+
+After that, I traverse the second array. For every element, I perform a linear search in the union array.
+
+If the element is already present, I skip it.
+Otherwise, I insert it into the union array.
+
+This approach works correctly, but every element of the second array requires searching through the union array, making it inefficient for larger inputs.
+
+  Time Complexity
+Traversing the first array → O(n)
+Traversing the second array → O(m)
+Linear search for every element of the second array → O(n + m) (maximum size of union array)
+
+Overall Time Complexity: O((n + m) × m) (approximately O(n × m))
+
+Space Complexity
+
+A separate union array is used to store the answer.
+
+Space Complexity: O(n + m)
+
+ Approach 2: Better Approach (Binary Search)
+ Algorithm
+
+The idea is almost the same as the brute-force approach.
+
+First, copy the unique elements of the first array into the union array.
+
+Instead of performing a linear search for every element of the second array, use Binary Search because the union array remains sorted.
+
+If Binary Search finds the element, skip it.
+Otherwise, insert it into the union array.
+
+Replacing linear search with binary search reduces the searching time and makes this approach faster than brute force.
+
+ Time Complexity
+Traverse first array → O(n)
+Binary Search for every element of second array → O(m log n)
+
+Overall Time Complexity: O(n + m log n)
+
+ Space Complexity
+
+A separate union array is required.
+
+Space Complexity: O(n + m)
+
+  Approach 3: Optimal Approach (Two Pointer)
+  Algorithm
+
+Since both arrays are already sorted, there is no need to search for elements repeatedly.
+
+Two pointers are used:
+
+first points to the first array.
+second points to the second array.
+
+Both pointers move simultaneously.
+
+If both elements are equal, insert the value only once into the union array and move both pointers.
+If the first array contains the smaller element, insert it and move only the first pointer.
+If the second array contains the smaller element, insert it and move only the second pointer.
+
+Before inserting any element, compare it with the last inserted element of the union array. If both values are the same, skip the insertion to avoid duplicates.
+
+Once one array is completely traversed, simply traverse the remaining elements of the other array and continue applying the same duplicate check.
+
+Since each pointer moves only forward and every element is processed only once, this is the most efficient solution.
+
+ Time Complexity
+
+Each element from both arrays is visited only once.
+
+Overall Time Complexity: O(n + m)
+
+  Space Complexity
+
+The union array stores the final result.
+
+Space Complexity: O(n + m)
