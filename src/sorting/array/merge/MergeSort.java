@@ -1,4 +1,4 @@
-package sorting.merge;
+package sorting.array.merge;
 
 public class MergeSort {
 
@@ -41,7 +41,7 @@ public class MergeSort {
              index ++;
          }
 
-         // copying new Array to old array
+         // copying new Array to old sorting.array
 
         for (int i = 0; i < newArray.length ; i++) {
             arr[low + i] = newArray[i];

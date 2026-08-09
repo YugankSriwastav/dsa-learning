@@ -1,19 +1,19 @@
-package array.searching;
+package sorting.array.searching;
 
 public class UnionArray {
-    // union of two sorted array
+    // union of two sorted sorting.array
     /*
     arr 1 : 1,2,2,3,4,5,5
     arr 2 : 1,2,2,2,3,4,4,5,5,6
-    union array : 1,2,3,4,5,6
+    union sorting.array : 1,2,3,4,5,6
      */
     // Brute force :
 
       /*
       Approach 1st :
-      Step 1: make a union array
-      Step 2: enter only that which is longer than the previous value in union array
-      step 3: when entered all vale just compared two array 2 if first second array have same value don't add it
+      Step 1: make a union sorting.array
+      Step 2: enter only that which is longer than the previous value in union sorting.array
+      step 3: when entered all vale just compared two sorting.array 2 if first second sorting.array have same value don't add it
 
        */
 
@@ -53,7 +53,7 @@ public class UnionArray {
 
         // Brute force complete
 
-//        // 2nd Approach better (use binary search instead of liner because array is sorted)
+//        // 2nd Approach better (use binary search instead of liner because sorting.array is sorted)
 //
 //
 //
@@ -114,9 +114,9 @@ public class UnionArray {
 
         }
 
-       // if one side array is complete then
+       // if one side sorting.array is complete then
 
-        //check which side array is completed
+        //check which side sorting.array is completed
 
         if(first != firstArray.length){
             while(first < firstArray.length){

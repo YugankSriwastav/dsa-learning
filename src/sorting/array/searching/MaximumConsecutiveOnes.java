@@ -1,4 +1,4 @@
-package array.searching;
+package sorting.array.searching;
 
 public class MaximumConsecutiveOnes {
     public int maxConsecutiveOnes(int [] arr){

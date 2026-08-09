@@ -1,7 +1,7 @@
-package array;
+package sorting.array;
 
 public class SecondLargest {
-    // Brute Force Approach : sort the array and print the second element
+    // Brute Force Approach : sort the sorting.array and print the second element
 
 
     // Optimal Solution

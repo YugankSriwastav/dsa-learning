@@ -1,7 +1,7 @@
-package array;
+package sorting.array;
 
 public class RemoveDuplicates {
-    // As we know, we can't delete the elements of array
+    // As we know, we can't delete the elements of sorting.array
      // so we can assign
 
     public int removeDuplicates(int[] arr){

@@ -1,7 +1,7 @@
-package array.searching;
+package sorting.array.searching;
 
 public class AppearsOnce {
-    // Problem find the element which is appearing ones in array
+    // Problem find the element which is appearing ones in sorting.array
 
     // 1st Approach Brute Force
 

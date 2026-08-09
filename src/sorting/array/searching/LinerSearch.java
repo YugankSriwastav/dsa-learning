@@ -1,4 +1,4 @@
-package array.searching;
+package sorting.array.searching;
 
 public class LinerSearch {
     public int linearSearch(int[] arr, int num){
@@ -20,7 +20,7 @@ public class LinerSearch {
             System.out.println("Element found at index : " + index);
         }
         else{
-            System.out.println("Element not found in array");
+            System.out.println("Element not found in sorting.array");
         }
     }
 }

@@ -1,4 +1,4 @@
-package sorting.quick;
+package sorting.array.quick;
 
 public class QuickSort {
     public void quickSort(int[] arr, int lowerLimit, int upperLimit){

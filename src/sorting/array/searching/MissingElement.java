@@ -1,4 +1,4 @@
-package array.searching;
+package sorting.array.searching;
 
 public class MissingElement {
     // work for only sorted Array
@@ -40,7 +40,7 @@ public class MissingElement {
         for (int i = 0; i < arr.length; i++) {
             hashArray[arr[i]] = arr[i];
         }
-        // Hashed array initialized successfully
+        // Hashed sorting.array initialized successfully
 
         for (int i = 1; i < hashArray.length; i++) {
             if(i != hashArray[i]){

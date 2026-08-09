@@ -2,7 +2,7 @@ Problem : Maximum Consecutive Ones in Array
 
 Note : to solve this problem we will need two variable, 1st is count and 2nd is max
 
-Step 1: Traverse array from index zero to last
+Step 1: Traverse sorting.array from index zero to last
 Step 2: if arr[i] == 1 then just add one in existing value of count
 step 3: if count > max then assign count value to max
 Step 4: if arr[i] == 0 then just reset count to zero

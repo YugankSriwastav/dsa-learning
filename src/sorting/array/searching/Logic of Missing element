@@ -1,6 +1,6 @@
 ## Missing Element in an Array
 
-The goal is to find the missing number from an array containing numbers in a given range.
+The goal is to find the missing number from an sorting.array containing numbers in a given range.
 
 Example:
 
@@ -12,11 +12,11 @@ I solved this problem using multiple approaches to understand how the solution c
 
  1. Sorted Array Approach
 
-This approach works only when the array is sorted.
+This approach works only when the sorting.array is sorted.
 
 **Logic:**
 
-  Traverse the array from the beginning.
+  Traverse the sorting.array from the beginning.
   At index `i`, the expected value is `i + 1`.
   Compare `arr[i]` with `i + 1`.
   If they are different, then `i + 1` is the missing element.
@@ -28,14 +28,14 @@ Space Complexity:** `O(1)`
 
  2. Brute Force Approach
 
-In this approach, I check every possible number against all the elements of the array.
+In this approach, I check every possible number against all the elements of the sorting.array.
 
 Logic:
 
 Start checking numbers one by one.
-For every number, traverse the complete array.
+For every number, traverse the complete sorting.array.
 If the number exists, move to the next number.
-If it is not found anywhere in the array, that number is the missing element.
+If it is not found anywhere in the sorting.array, that number is the missing element.
 
 This approach is simple, but because of the nested loops it becomes slow for large arrays.
 
@@ -45,21 +45,21 @@ Space Complexity: `O(1)`
 
 3. Hashing Approach
 
-Instead of repeatedly searching the original array, I create an extra array to keep track of the available elements.
+Instead of repeatedly searching the original sorting.array, I create an extra sorting.array to keep track of the available elements.
 
 Logic:
 
-Create a hash array large enough to represent all possible numbers.
-Traverse the original array.
-For every element `arr[i]`, store it at the corresponding index in the hash array.
-After filling the hash array, traverse it from index `1`.
+Create a hash sorting.array large enough to represent all possible numbers.
+Traverse the original sorting.array.
+For every element `arr[i]`, store it at the corresponding index in the hash sorting.array.
+After filling the hash sorting.array, traverse it from index `1`.
 If the value at an index does not match the index, that index represents the missing number.
 
 For example:
 
 `arr = [1, 3, 2, 4, 6]`
 
-The hash array will represent the presence of:
+The hash sorting.array will represent the presence of:
 
 `[1, 2, 3, 4, _, 6]`
 
@@ -79,8 +79,8 @@ This approach uses the sum of natural numbers.
 Logic:
 
  Calculate the expected sum of all numbers in the required range.
- Calculate the sum of the elements present in the array.
- Subtract the current array sum from the expected sum.
+ Calculate the sum of the elements present in the sorting.array.
+ Subtract the current sorting.array sum from the expected sum.
 
 The difference gives the missing element.
 
@@ -90,7 +90,7 @@ For example:
 
 `1 + 2 + 3 + 4 + 5 + 6 = 21`
 
-Current array:
+Current sorting.array:
 
 `1 + 3 + 2 + 4 + 6 = 16`
 
@@ -118,7 +118,7 @@ The important XOR properties are:
  Logic:
 
  XOR all the numbers that should be present in the range.
- XOR all the elements actually present in the array.
+ XOR all the elements actually present in the sorting.array.
  XOR both results.
  Numbers that occur in both sets cancel each other because `a ^ a = 0`.
  The only number left is the missing element.

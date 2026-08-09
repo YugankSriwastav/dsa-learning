@@ -1,4 +1,4 @@
-package array.searching;
+package sorting.array.searching;
 
 import java.util.HashMap;
 
@@ -11,7 +11,7 @@ public class SubArrayWithK {
                for (int j = i; j < array.length; j++) {
                    sum += array[j];
                    if(sum == k){
-                       // now we are checking the current length of sub array
+                       // now we are checking the current length of sub sorting.array
                        maxLength = Math.max(maxLength, j - i + 1);
                    }
                }

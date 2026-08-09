@@ -1,4 +1,4 @@
-package array;
+package sorting.array;
 
 public class RotateLastElement {
     // Rotate left Array by one place

@@ -1,4 +1,4 @@
-package array;
+package sorting.array;
 
 public class MoveZero {
     void swap(int[] arr, int i, int j){

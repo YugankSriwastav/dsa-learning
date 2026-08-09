@@ -1,4 +1,4 @@
-package sorting.bubble;
+package sorting.array.bubble;
 
 public class BubbleSort {
     public void swapping(int [] arr, int a, int b){

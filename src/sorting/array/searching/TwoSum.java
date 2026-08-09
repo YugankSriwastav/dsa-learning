@@ -1,4 +1,4 @@
-package array.searching;
+package sorting.array.searching;
 
 import java.util.HashSet;
 

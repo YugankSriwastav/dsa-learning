@@ -1,4 +1,4 @@
-package array;
+package sorting.array;
 
 public class CheckSorted {
 
@@ -9,23 +9,23 @@ public class CheckSorted {
 //    }
 //    // 1st Approach
 //    /*
-//       sort the given array and then compare it original array to sorted array
+//       sort the given sorting.array and then compare it original sorting.array to sorted sorting.array
 //     */
 //
-//    // sorting array using selection sort
+//    // sorting sorting.array using selection sort
 //    public void sorted(int[] arr, int size){
 //
-//     // to find the smallest value of array
+//     // to find the smallest value of sorting.array
 //        int[] copiedArray = new int[size];
 //        int index = 0;
 //
-//       // coping original to second array
+//       // coping original to second sorting.array
 //        for (int i = 0; i < arr.length; i++) {
 //            copiedArray[index] = arr[i];
 //            index ++;
 //        }
 //
-//        // now we are sorting copied array
+//        // now we are sorting copied sorting.array
 //        for (int i = 0; i < copiedArray.length - 1; i++) {
 //            int minIndex = i;
 //            for (int j = i + 1; j < size; j++) {
@@ -37,17 +37,17 @@ public class CheckSorted {
 //            swap(copiedArray,i,minIndex);
 //        }
 //
-//        // printing sorted array
-//        System.out.println("Sorted array");
+//        // printing sorted sorting.array
+//        System.out.println("Sorted sorting.array");
 //        for (int value : copiedArray){
 //            System.out.println(value);
 //        }
 //
-//        // Copied Array is sorted now we can compare it to the original array
-//        // if both have the same element then we can say array is sorted
+//        // Copied Array is sorted now we can compare it to the original sorting.array
+//        // if both have the same element then we can say sorting.array is sorted
 //
 //    }
-    // 2nd approach of check array is sorted or not
+    // 2nd approach of check sorting.array is sorted or not
 
     public boolean checkSorted(int [] array, int size){
         boolean ascending = true;
