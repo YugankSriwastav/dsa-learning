@@ -1,0 +1,28 @@
+// Brute Force :
+  Use any Sorting Algorithm
+
+2nd Approach Better
+
+step 1: Make three variable countZero, countOne, countTwo
+step 2: Run a loop from o to last index and count zero one and two
+Note : here we will need one variable index
+step 3: check if(countZero != 0) then run a loop from 0 to countZero and overwrite to previous array
+        else -if(countOne != 1) then run a loop from 0 to countOne and overwrite to previous array
+        else - if(countTwo != 2) then run a loop from 0 to countTwo and overwrite to previous array
+
+ this approach has TC: O(2N) => O(n), SC => O(3) => O(1)
+
+ 3rd Approach (Optimal) using Dutch National Flag
+       ## Main Point
+ In the Dutch National Flag algorithm we assume that 0 to low -1 is containing zero, low to mid - 1 is containing 1
+ and mid to high is unsorted and high + 1 to n - 1 is containing 2
+
+ run while loop or any loop from mid to high
+ while(mid >= high)
+ {
+  so mid value is equals to zero just swap it to low, then mid ++, low
+  but mid value is 1 just mid ++
+  but when mid value is 2 swap it to high and high --
+ }
+
+ This Approach has TC : O(n) and SC : O(3) => O(1)
