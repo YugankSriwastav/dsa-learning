@@ -8,7 +8,7 @@ public class MergeSort {
            }
            int mid = (low + high)/2;
            mergeSort(arr,low, mid);
-           mergeSort(arr, mid+1, high);
+           mergeSort(arr, mid + 1, high);
 
            // Merging
           merging(arr,low,mid,high);
