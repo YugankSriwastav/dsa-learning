@@ -1,4 +1,4 @@
-package sorting.array;
+package searching.array;
 
 public class MaxElement {
     // Basic solution to find max Element

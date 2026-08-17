@@ -1,4 +1,4 @@
-package sorting.array;
+package searching.array;
 
 public class CheckSorted {
 
@@ -67,13 +67,52 @@ public class CheckSorted {
         return ascending || descending;
     }
 
+    public static String longestCommonPrefix(String[] arr) {
+
+        String first = arr[0];
+
+        for (int i = 0; i < first.length(); i++) {
+
+            char ch = first.charAt(i);
+
+            for (int j = 1; j < arr.length; j++) {
+
+                if (i >= arr[j].length() || arr[j].charAt(i) != ch) {
+                    return first.substring(0, i);
+                }
+            }
+        }
+
+        return first;
+    }
+
+    // REMOVE DUPLICATES FROM SORTED ARRAY
+
+    public static int removeDuplicates(int[] arr) {
+
+        int i = 0;
+
+        for (int j = 1; j < arr.length; j++) {
+
+            if (arr[j] != arr[i]) {
+                i++;
+                arr[i] = arr[j];
+            }
+        }
+
+        return i + 1;
+    }
 
     public static void main(String[] args) {
-        int [] arr = {-10,-20,-30,-40};
+        int [] arr = {1,2};
         int size = arr.length;
         CheckSorted checkSorted = new CheckSorted();
 //        checkSorted.sorted(arr,size);
         System.out.println("result is " + checkSorted.checkSorted(arr, size));
+        String [] strs = {"Flower","Flow","Flight"};
+        System.out.println(CheckSorted.longestCommonPrefix(strs));
+        System.out.println(CheckSorted.removeDuplicates(arr)
+        );
 
     }
 }
