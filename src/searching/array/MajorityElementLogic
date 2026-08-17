@@ -1,0 +1,23 @@
+// Brute force
+ // Manually check one by one
+
+ // Better Approach (Hashing Approach)
+ step 1: create HashMap and assign element as a key and
+          how can many times this key is coming just increase the value
+ step 2: using loop iterate which value is more than n/2
+
+ SC: O(n) and TC: O(n)
+
+ // Optimal Approach (More Voting Algorithm)
+
+ for this approach we need three variable candidate, count
+
+ step 1 : run a loop for(int num : arr)
+ step 2: if the value of count is equals to 0 than assign num in candidate and count +1;
+ step 3: if next num is equals to candidate than count ++
+ step 4: else count --
+ // most important step
+ step 5: after knowing the candidate need to check this candidate is occurred greater than n/2 or not
+     if not than answer will be "here no one is majority element"
+
+
