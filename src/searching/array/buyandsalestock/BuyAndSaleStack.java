@@ -1,4 +1,4 @@
-package searching.array;
+package searching.array.buyandsalestock;
 
 public class BuyAndSaleStack {
     public void buyAndSale(int[]array){
