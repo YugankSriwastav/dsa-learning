@@ -51,8 +51,8 @@ public class ZeroOneTwoSorting {
     }
 
     public void dutchOptimal(int[] arr, int size){
-        int low = 0, mid = 0, high = size;
-        while(mid >= high){
+        int low = 0, mid = 0, high = size -1;
+        while(mid < high){
             if(arr[mid] == 0){
                 swap(arr,low,mid);
                 low ++;
@@ -70,7 +70,8 @@ public class ZeroOneTwoSorting {
         int [] arr = {0,1,2,0,0,1,1,2,2,0};
         ZeroOneTwoSorting zeroOneTwoSorting = new ZeroOneTwoSorting();
 //        zeroOneTwoSorting.sorting(arr, arr.length);
-        zeroOneTwoSorting.sorting(arr, arr.length);
+        zeroOneTwoSorting.dutchOptimal(arr, arr.length);
+
         System.out.println("Dutch Algorithm");
         for(int num : arr){
             System.out.print(num);
