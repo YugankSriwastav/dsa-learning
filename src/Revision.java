@@ -7,20 +7,21 @@ public class Revision {
         arr[j] = temp;
     }
 
-    public void reverse(int [] arr, int i, int j){
-        if(i > j ){
-            return;
+   // find fibonachi 0 to n
+
+    int value = 0;
+    public static long fibonacci(int n){
+        if(n <= 1){
+            return n;
         }
-        swap(arr,i,j);
-        reverse(arr, i + 1, j - 1);
+
+        long last = fibonacci(n - 1);
+        long secondLast = fibonacci(n -2);
+        return last + secondLast;
+
     }
 
     public static void main(String[] args) {
-        int [] arr = {1,2,3,4,5};
-        Revision revision = new Revision();
-        revision.reverse(arr,0, arr.length - 1);
-        for(int num : arr ){
-            System.out.print(num);
-        }
+        System.out.println(Revision.fibonacci(4));
     }
 }
