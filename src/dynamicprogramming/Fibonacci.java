@@ -29,6 +29,19 @@ public class Fibonacci {
         return value;
     }
 
+    // optimal
+    public static long fibonacciOptimal(int x){
+        int last = 1;
+        int secondLast = 0;
+        int curI = 0;
+        for (int i = 2; i <= x; i++) {
+            curI = last + secondLast;
+            secondLast = last;
+            last = curI;
+        }
+        return curI;
+    }
+
     public static void main(String[] args) {
 
         int x = 4;
@@ -37,6 +50,8 @@ public class Fibonacci {
         System.out.println(fibonacci(array,x));
         System.out.println("Better Approach");
         System.out.println(fibonacci(array,x));
+        System.out.println("Optimal Approach");
+        System.out.println(fibonacciOptimal(4));
 
     }
 }
