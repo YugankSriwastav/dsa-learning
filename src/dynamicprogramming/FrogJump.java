@@ -76,6 +76,8 @@ public class FrogJump {
         return prev1;
     }
 
+
+
     public static void main(String[] args) {
 
         long[] array = {10,20,30,10};
