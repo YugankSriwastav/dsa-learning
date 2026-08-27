@@ -31,6 +31,21 @@ public class MaximumSumNonAdjacent {
     }
 
     // Most Imp Tabulation
+    public long tabulation(long [] array){
+        // dp memory
+        long[]dpMemory = new long[array.length + 2];
+        // here we assign -1 just for understanding
+        Arrays.fill(dpMemory, -1);
+        int n = array.length;
+        dpMemory[n] = 0;
+        dpMemory[n + 1] = 0;
+        for (int i = n - 1; i >= 0; i--) {
+            long pick = array[i] + dpMemory[i + 2];
+            long noPick = dpMemory[i + 1];
+            dpMemory[i] = Math.max(pick, noPick);
+        }
+        return dpMemory[0];
+    }
 
     public static void main(String[] args) {
         long [] array = {2,7,9,3,1};
@@ -42,5 +57,6 @@ public class MaximumSumNonAdjacent {
         System.out.println("Memoization");
         System.out.println(maxSum.memoization(array,0, array.length,dpMemory));
         System.out.println("Tabulation");
+        System.out.println(maxSum.tabulation(array));
     }
 }
