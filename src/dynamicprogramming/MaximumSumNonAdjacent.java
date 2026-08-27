@@ -47,6 +47,21 @@ public class MaximumSumNonAdjacent {
         return dpMemory[0];
     }
 
+    // optimization
+    public long tabulationOptimized(long [] array){
+        int n = array.length;
+        long next1 = 0; // n + 1
+        long next2 = 0; // n + 1
+        for (int i = n - 1; i >= 0; i--) {
+            long pick = array[i] + next2;
+            long noPick = next1;
+            long current = Math.max(pick, noPick);
+            next2 = next1;
+            next1 = current;
+        }
+        return next1;
+    }
+
     public static void main(String[] args) {
         long [] array = {2,7,9,3,1};
         long []dpMemory = new long[array.length];
@@ -58,5 +73,7 @@ public class MaximumSumNonAdjacent {
         System.out.println(maxSum.memoization(array,0, array.length,dpMemory));
         System.out.println("Tabulation");
         System.out.println(maxSum.tabulation(array));
+        System.out.println("Tabulation Optimization");
+        System.out.println(maxSum.tabulationOptimized(array));
     }
 }
