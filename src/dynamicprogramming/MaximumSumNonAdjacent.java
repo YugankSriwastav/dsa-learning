@@ -63,7 +63,7 @@ public class MaximumSumNonAdjacent {
     }
 
     public static void main(String[] args) {
-        long [] array = {2,7,9,3,1};
+        long [] array = {1,2,3,4};
         long []dpMemory = new long[array.length];
         Arrays.fill(dpMemory, -1);
         MaximumSumNonAdjacent maxSum = new MaximumSumNonAdjacent();
