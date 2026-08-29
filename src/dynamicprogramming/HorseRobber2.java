@@ -1,5 +1,7 @@
 package dynamicprogramming;
 
+import java.util.Arrays;
+
 public class HorseRobber2 {
     public long bruteForce(long[]arr, int start, int end){
         if(start > end){
@@ -10,6 +12,22 @@ public class HorseRobber2 {
        return Math.max(pick, noPick);
     }
 
+    // Memoization
+    public long memoization(long[]arr, int start, int end, long []dpMemory){
+        if(start > end){
+            return 0;
+        }
+        if(dpMemory[start] != -1){
+            return dpMemory[start];
+        }
+
+        long pick = arr[start] + memoization(arr,start + 2,end,dpMemory);
+        long noPick = memoization(arr,start + 1, end, dpMemory);
+        dpMemory[start] = Math.max(pick, noPick);
+        return dpMemory[start];
+    }
+
+
     // here we are comparing for include firs or exclude first
 
     public long rob(long [] array, int n){
@@ -19,12 +37,18 @@ public class HorseRobber2 {
         if(n == 1){
             return array[0];
         }
+        long [] dpMemory = new long[array.length];
+        Arrays.fill(dpMemory, -1);
+
         // include 1
         System.out.println("Including the first element of array...");
-        long include1 = bruteForce(array,0,n-2);
+//        long include1 = bruteForce(array,0,n-2);
+        long include1 = memoization(array,0,n-2, dpMemory);
         System.out.println(include1);
         System.out.println("Excluding the first element of array....");
-        long exclude1 = bruteForce(array,1, n- 1);
+//        long exclude1 = bruteForce(array,1, n- 1);
+        Arrays.fill(dpMemory, -1);
+        long exclude1 = memoization(array,1, n- 1, dpMemory);
         System.out.println(exclude1);
 
         return Math.max(include1,exclude1);
