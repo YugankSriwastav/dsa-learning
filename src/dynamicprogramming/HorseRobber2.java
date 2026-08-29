@@ -26,6 +26,18 @@ public class HorseRobber2 {
         dpMemory[start] = Math.max(pick, noPick);
         return dpMemory[start];
     }
+    // Tabulation
+
+    public long tabulation(long [] array, int start, int last){
+        long [] dpMemory = new long[array.length + 2];
+        for (int i = last; i >= start;  i--) {
+            long pick = array[i] + dpMemory[i + 2];
+            long noPick = dpMemory[i + 1];
+            dpMemory[i] = Math.max(pick, noPick);
+        }
+       return dpMemory[start];
+    }
+
 
 
     // here we are comparing for include firs or exclude first
@@ -43,12 +55,14 @@ public class HorseRobber2 {
         // include 1
         System.out.println("Including the first element of array...");
 //        long include1 = bruteForce(array,0,n-2);
-        long include1 = memoization(array,0,n-2, dpMemory);
+//        long include1 = memoization(array,0,n-2, dpMemory);
+        long include1 = tabulation(array, 0,n - 2);
         System.out.println(include1);
         System.out.println("Excluding the first element of array....");
 //        long exclude1 = bruteForce(array,1, n- 1);
-        Arrays.fill(dpMemory, -1);
-        long exclude1 = memoization(array,1, n- 1, dpMemory);
+//        Arrays.fill(dpMemory, -1);
+//        long exclude1 = memoization(array,1, n- 1, dpMemory);
+        long exclude1 = tabulation(array, 1, n- 1);
         System.out.println(exclude1);
 
         return Math.max(include1,exclude1);
