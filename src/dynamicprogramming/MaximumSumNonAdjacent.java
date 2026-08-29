@@ -51,7 +51,7 @@ public class MaximumSumNonAdjacent {
     public long tabulationOptimized(long [] array){
         int n = array.length;
         long next1 = 0; // n + 1
-        long next2 = 0; // n + 1
+        long next2 = 0; // n + 2
         for (int i = n - 1; i >= 0; i--) {
             long pick = array[i] + next2;
             long noPick = next1;
