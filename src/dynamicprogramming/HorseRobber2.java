@@ -55,6 +55,7 @@ public class HorseRobber2 {
 
 
 
+
     // here we are comparing for include firs or exclude first
 
     public long rob(long [] array, int n){
@@ -89,5 +90,6 @@ public class HorseRobber2 {
         long [] arr = {1,2,3,4,5};
         HorseRobber2 horseRobber2 = new HorseRobber2();
         System.out.println(horseRobber2.rob(arr,arr.length));
+
     }
 }
