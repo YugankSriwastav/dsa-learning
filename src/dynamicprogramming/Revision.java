@@ -11,8 +11,10 @@ public class Revision {
             return dpMemory[first];
         }
 
-        dpMemory[first] = arr[first] + solve(arr, first + 2, last,dpMemory);
-        return dpMemory[first];
+         int rob = arr[first] + solve(arr, first + 2, last,dpMemory);
+         int skip = solve(arr, first, last, dpMemory);
+
+        return dpMemory[first] = Math.max(rob,skip);
     }
     public int horseRobber2nd(int [] arr, int [] dpMemory){
         System.out.println("0 to n -2");
@@ -23,7 +25,7 @@ public class Revision {
     }
 
     public static void main(String[] args) {
-        int [] arr = {1,3,2,4,3,6};
+        int[] arr = {1, 2, 100, 2, 2, 100};
         int [] dpMemory = new int[arr.length];
         Arrays.fill(dpMemory, -1);
         Revision revision = new Revision();
