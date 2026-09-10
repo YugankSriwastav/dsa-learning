@@ -37,14 +37,14 @@ public class Grid {
         }
 
         // memoization
-         if(dpMemory[var1] [var2] != - 1){
-             return dpMemory [var1][var2];
-         }
+        if(dpMemory[var1] [var2] != - 1){
+            return dpMemory [var1][var2];
+        }
 
         // if right
 
-       long right = memoization(array, dpMemory, var1 + 1, var2, m, n);
-         long down = memoization(array, dpMemory, var1, var2 + 1, m, n);
+        long right = memoization(array, dpMemory, var1 + 1, var2, m, n);
+        long down = memoization(array, dpMemory, var1, var2 + 1, m, n);
         return dpMemory[var1][var2] = right + down;
     }
 
