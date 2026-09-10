@@ -76,6 +76,28 @@ public class Grid {
         return dpMemory[m - 1][n - 1];
     }
 
+    // Tabulation Optimal Approach : Currently we are using m * n memory space, do we really need m * n space ??
+    // Answer no, we can only take 5 size of array and store the answer what we got, then next answer
+
+    public long tabulationOptimal(long [][] array, int var1, int var2, int m, int n) {
+
+        long[] dpMemory = new long[3];
+        Arrays.fill(dpMemory, 1);
+
+        // Base Case
+        if (var1 > m - 1 || var2 > n - 1) {
+            return 0;
+        }
+
+
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                dpMemory[j] = dpMemory[j] + dpMemory[j - 1];
+            }
+
+        }
+        return dpMemory[n - 1];
+    }
     public static void main(String[] args) {
         long[][] arr = {
                 {10, 20, 30},
@@ -95,6 +117,8 @@ public class Grid {
         System.out.println(grid.memoization(arr,dpMemory,0,0, arr.length, arr[0].length));
         System.out.println("Tabulation");
         System.out.println(grid.tabulation(arr,0,0, arr.length, arr[0].length));
+        System.out.println("Tabulation Optimal");
+        System.out.println(grid.tabulationOptimal(arr,0,0, arr.length, arr[0].length));
 
     }
 
