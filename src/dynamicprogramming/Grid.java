@@ -10,6 +10,7 @@ public class Grid {
           // condition 1 : if we got destiny then return 1 (yani ki ek path mil gaya
           // condition 2 : agar i row ke bahar nikal jaye ya j column ke bahar to 0 return karo
 
+        // destination Break
         if(var1 == m - 1 && var2 == n - 1 ){
             return 1;
         }
@@ -30,7 +31,7 @@ public class Grid {
         // condition 2 : agar i row ke bahar nikal jaye ya j column ke bahar to 0 return karo
 
         if(var1 == m - 1 && var2 == n - 1 ){
-            return 1;
+            return 0;
         }
         if(var1 > m - 1 || var2 > n - 1){
             return 0;
