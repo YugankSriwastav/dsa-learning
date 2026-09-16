@@ -34,13 +34,29 @@ public class GridMinimumPath {
 
     // direct Optimal Approach
 
-//    public long optimalApproach(long [][] array){
-//        long []dpMemory = new long[array[0].length];
-//        // Base Case
-//
-//
-//
-//    }
+
+    public long optimalApproach(long [][] array, int row, int column, int rowLength, int columnLength){
+       long [] dpMemory = new long[array[row].length];
+
+       // First Row
+       dpMemory[0] = array[0][0];
+
+        for (int i = 1; i < rowLength; i++) {
+            dpMemory[i] = dpMemory[i - 1] + array[0][i];
+        }
+        // First row data filled
+
+        // Remaining Row
+
+        for (int i = 1; i < columnLength; i++) {
+            dpMemory[0] += array[i][0];
+            for (int j = 1; j < rowLength; j++) {
+                dpMemory[j] = Math.min(dpMemory[0],dpMemory[j]) + array[j][i];
+            }
+
+        }
+        return dpMemory[rowLength - 1];
+    }
    public static void main(String[] args) {
        long[][] arr = {
                {10, 20, 30},
@@ -54,6 +70,8 @@ public class GridMinimumPath {
        GridMinimumPath gridMinimumPath = new GridMinimumPath();
        System.out.println("Result Of Recursion : ");
        System.out.println(gridMinimumPath.recursion(arr,0,0, arr.length, arr[0].length));
+       System.out.println("Optimal Approach : ");
+       System.out.println(gridMinimumPath.optimalApproach(arr,0,0,arr[0].length,arr.length));
    }
 
 }
